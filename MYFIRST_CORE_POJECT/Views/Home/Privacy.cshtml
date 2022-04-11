@@ -1,0 +1,46 @@
+﻿<style>
+     h1{
+         background-color:#b6ff00
+     }
+     body{
+         background-color:palegreen
+     }
+</style>
+<h1>wellcome to chetu company</h1>
+
+
+
+<p>Use this page to detail your site's privacy policy.</p>
+@model List< MYFIRST_CORE_POJECT.Models.empmodel>
+<table class="table table-striped">
+    <tr>
+        <th>id </th>
+        <th>NAME</th>
+        <th>EMAIL</th>
+        <th>MOBILE</th>
+        <th>DEPARTMENT</th>
+        <th>CITY</th>
+        <th>EDIT</th>
+        <th>DELETE</th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@item.Email</td>
+            <td>@item.Mobile</td>
+            <td>@item.Department</td>
+            <td>@item.City</td>
+           
+            <td><a asp-controller="Home" asp-action="Edit" asp-route-Id="@item.Id">EDIT</a></td>
+            <td><a asp-controller="Home" asp-action="delete" asp-route-Id="@item.Id">Delete</a></td>
+
+
+        </tr>
+
+    }
+    
+</table>

@@ -1,0 +1,64 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<style>
+    h1{
+       background-color:#ffd800
+
+    }
+    body{
+        background-color:seagreen
+    }
+
+
+</style>
+<h1>
+    WELCOME CHETU INDIA 
+</h1>
+
+
+@model MYFIRST_CORE_POJECT.Models.empmodel
+
+
+<div class="row">
+    <div class="col-md-4">
+        
+        <form asp-action="add_emp" asp-controller="Home">
+          <input type="hidden" asp-for="Id" />
+            <div clas="form-group">
+                <label asp-for="Name" class="custom-control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div clas="form-group">
+                <label asp-for="Email" class="custom-control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div clas="form-group">
+                <label asp-for="Mobile" class="custom-control-label"></label>
+                <input asp-for="Mobile" class="form-control" />
+                <span asp-validation-for="Mobile" class="text-danger"></span>
+            </div>
+
+            <div clas="form-group">
+                <label asp-for="Department" class="custom-control-label"></label>
+                <input asp-for="Department" class="form-control" />
+                <span asp-validation-for="Department" class="text-danger"></span>
+            </div>
+
+            <div clas="form-group">
+                <label asp-for="City" class="custom-control-label"></label>
+                <input asp-for="City" class="form-control" />
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+            <div>
+                <input type="submit" value="Submit" class="btn btn-outline-success" />
+            </div>
+        </form>
+    </div>
+</div>

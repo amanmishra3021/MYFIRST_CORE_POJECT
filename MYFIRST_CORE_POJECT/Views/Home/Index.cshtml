@@ -1,0 +1,72 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<style>
+    h1 {
+        background-color: #b6ff00
+    }
+
+    body {
+        background-color: #4800ff
+    }
+</style>
+
+@using Microsoft.AspNetCore.Http
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+<h1 style="color:#ffd800"></h1>
+<h1>@HttpContextAccessor.HttpContext.Session.GetString("name")</h1>
+
+
+
+
+<h1>****************************** viewbag information************************************</h1>
+<h1>@ViewBag.id</h1>
+<h1>@ViewBag.name</h1>
+<h1>@ViewBag.email</h1>
+<h1>@ViewBag.designation</h1>
+<ul>
+
+    @foreach (var item in ViewBag.list)
+    {
+    <li>
+        @item
+    </li>
+
+    }
+
+</ul>
+<h1>****************************** viewdata information************************************</h1>
+<h1>@ViewData["abc1"]</h1>
+<h1>@ViewData["abc2"]</h1>
+<h1>@ViewData["abc3"]</h1>
+<h1>@ViewData["abc4"]</h1>
+<h1>@ViewData["abc5"]</h1>
+
+<ul>
+    @foreach (var std in (List<string>)ViewData["abc"])
+    {
+    <li>
+        @std
+    </li>
+    }
+</ul>
+<h1>****************************** tempdata information************************************</h1>
+<h1>@TempData["abc"]</h1>
+<h1>@TempData["abc1"]</h1>
+<h1>@TempData["abc2"]</h1>
+<h1>@TempData["abc3"]</h1>
+<h1>@TempData["abc4"]</h1>
+<ul>
+    @foreach (var std in (List<string>)TempData["er"])
+    {
+    <li>
+        @std
+    </li>
+    }
+</ul>
